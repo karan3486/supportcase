@@ -24,8 +24,8 @@ def success():
         f2 = request.files['file2'] 
         text = request.form['text']
 
-        f1.save(f1.filename)
-        f2.save(f2.filename) 
+        #f1.save(f1.filename)
+        #f2.save(f2.filename) 
         data=pd.read_csv(f1.filename,encoding='Latin-1')
         data2=pd.read_csv(f2.filename,encoding='iso-8859-1')
         data['codatetime']= [data['codatetime'][i][:10] for i in range(len(data['codatetime']))]
@@ -73,6 +73,6 @@ def success():
     
     
 if __name__ == '__main__':  
-    app.run(port=5050)
+    app.run(debug=True)
   
 
